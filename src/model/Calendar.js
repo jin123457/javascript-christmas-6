@@ -12,6 +12,14 @@ class Calendar {
     this.#specialDay = [3, 10, 17, 24, 25, 31];
   }
 
+  getCalendar() {
+    const calendarList = new Map();
+    calendarList.set('weekend',this.#weekend);
+    calendarList.set('specialDay',this.#specialDay);
+    
+    return calendarList;
+  }
+
   getWeekend() {
     return this.#weekend;
   }

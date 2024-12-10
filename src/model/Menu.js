@@ -20,6 +20,10 @@ class Menu {
       .set('샴페인', ['drink', 25000]);
   }
 
+  getMenu() {
+    return this.#menuList;
+  }
+
   getFoodInfo(name) {
     return this.#menuList.get(name);
   }
