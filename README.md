@@ -1,7 +1,7 @@
 # 🎄 크리스마스 프로모션 간단 설명
 
 가게에 `최근 5년간 판매 금액 최고치`와 `이벤트 참여 고객 증가`를 위한 12월 이벤트 기능을 구현한다.<br />
-이벤트의 종류는 총 `3가지`이며, `크리스마스 디데이 할인`, `금액 할인`, `증정이벤트`이다.
+이벤트의 종류는 총 `5가지`이며, `크리스마스 디데이 할인`, `주말 할인`, `평일 할인`, `특별 할인`, `증정 할인`이다.
 
 # 🛠️ 기능 구현 목록
 
@@ -10,6 +10,13 @@
 - [x] 환영 인사 출력
 - [x] 방문 날짜 입력
 - [x] 주문할 메뉴의 이름과 개수 입력
+- [x] 주문한 메뉴와 개수를 출력
+- [x] 할인 전 총주문 금액 출력
+- [x] 증정 메뉴 출력
+- [x] 혜택 내역 출력
+- [x] 총혜택 금액 출력
+- [x] 할인 후 예상 결제 금액 출력
+- [x] 12월 이벤트 배지 출력
 
 # ⛔️ 예외 처리 사항
 
@@ -29,6 +36,33 @@
   - [x] 주문한 메뉴의 개수가 총 20개를 초과한 경우
 
 # 📁 폴더 구조
+
+```
+├── README.md
+├── __tests__
+|  └── ApplicationTest.js
+├── image.png
+├── package-lock.json
+├── package.json
+└── src
+   ├── App.js
+   ├── controller
+   |  └── RestaurantController.js
+   ├── index.js
+   ├── model
+   |  ├── Calendar.js
+   |  └── Menu.js
+   ├── service
+   |  └── EventService.js
+   ├── utils
+   |  ├── constants.js
+   |  ├── errorHandler.js
+   |  ├── regex.js
+   |  └── validations.js
+   └── view
+      ├── InputView.js
+      └── OutputView.js
+```
 
 # 🙏 기능 요구 사항
 
