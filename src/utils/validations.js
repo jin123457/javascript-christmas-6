@@ -44,6 +44,27 @@ const validateMenu = (input, menu) => {
 
     return foodNameList.push(orderFood[0]);
   });
+
+  const orderQuality = orderList.reduce((acc, cur) => {
+    const add = acc + parseInt(cur.split('-')[1], 10);
+    return add;
+  }, 0);
+
+  if (orderQuality > 20) {
+    throw new Error(ERROR_MESSAGE.VALIDATION_MENU);
+  }
+
+  const onlyDrink = orderList.reduce((acc, cur) => {
+    if (menu.get(cur.split('-')[0])[0] !== 'drink') {
+      return false;
+    }
+
+    return acc;
+  }, true);
+
+  if (onlyDrink) {
+    throw new Error(ERROR_MESSAGE.VALIDATION_MENU);
+  }
 };
 
 export { validateDate, validateMenu };
