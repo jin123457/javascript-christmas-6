@@ -6,6 +6,10 @@ const ERROR_MESSAGE = Object.freeze({
 });
 
 const USER_MESSAGE = Object.freeze({
+  PRINT_WELCOME: '안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.',
+  PRINT_EVENT_INTRODUCE:
+    '12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!',
+  PRINT_ORDER_MENU_TITLE: '<주문 메뉴>',
   READ_DATE:
     '12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n',
   READ_MENU:

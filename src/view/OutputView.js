@@ -1,12 +1,17 @@
 import { Console } from '@woowacourse/mission-utils';
+import { USER_MESSAGE } from '../utils/constants.js';
 
 class OutputView {
   static async printWelcome() {
-    Console.print('안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.');
+    Console.print(USER_MESSAGE.PRINT_WELCOME);
+  }
+
+  static async printEventIntroduce() {
+    Console.print(USER_MESSAGE.PRINT_EVENT_INTRODUCE);
   }
 
   static async printMenu() {
-    Console.print('<주문 메뉴>');
+    Console.print(USER_MESSAGE.PRINT_ORDER_MENU_TITLE);
   }
 }
 
