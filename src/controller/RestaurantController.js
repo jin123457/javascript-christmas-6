@@ -10,6 +10,7 @@ class RestaurantController {
   async enter() {
     await OutputView.printWelcome();
     this.visitDate = await InputView.readDate();
+    await InputView.readMenu(this.menu);
   }
 }
 

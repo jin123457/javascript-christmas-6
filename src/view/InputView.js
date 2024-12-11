@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { validateDate } from '../utils/validations.js';
+import { validateDate, validateMenu } from '../utils/validations.js';
 import { errorHandler } from '../utils/errorHandler.js';
 import { USER_MESSAGE } from '../utils/constants.js';
 
@@ -19,8 +19,8 @@ class InputView {
     return this.getInput(USER_MESSAGE.READ_DATE, validateDate);
   }
 
-  static readMenu() {
-    return this.getInput(USER_MESSAGE.READ_MENU, validateDate);
+  static readMenu(menu) {
+    return this.getInput(USER_MESSAGE.READ_MENU, validateMenu, menu);
   }
 }
 
