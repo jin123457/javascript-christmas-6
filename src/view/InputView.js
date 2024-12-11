@@ -1,5 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import { validateDate } from '../utils/validations.js';
+import { errorHandler } from '../utils/errorHandler.js';
+import { USER_MESSAGE } from '../utils/constants.js';
 
 class InputView {
   static async getInput(message, vaildateFunction, ...args) {
@@ -7,23 +9,18 @@ class InputView {
       const input = await Console.readLineAsync(message);
       vaildateFunction(input, ...args);
       return input;
-    } catch (e) {
-      return Console.print(e);
+    } catch (error) {
+      errorHandler(error);
+      return this.getInput(message, vaildateFunction, ...args);
     }
   }
 
   static readDate() {
-    return this.getInput(
-      '12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n',
-      validateDate,
-    );
+    return this.getInput(USER_MESSAGE.READ_DATE, validateDate);
   }
 
   static readMenu() {
-    return this.getInput(
-      '주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)\n',
-      validateDate,
-    );
+    return this.getInput(USER_MESSAGE.READ_MENU, validateDate);
   }
 }
 
