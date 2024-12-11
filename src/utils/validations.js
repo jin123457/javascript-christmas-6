@@ -51,7 +51,7 @@ const validateMenu = (input, menu) => {
   }, 0);
 
   if (orderQuality > 20) {
-    throw new Error(ERROR_MESSAGE.VALIDATION_MENU);
+    throw new Error(ERROR_MESSAGE.MENU_COUNT_OVER_TWENTY);
   }
 
   const onlyDrink = orderList.reduce((acc, cur) => {
@@ -63,7 +63,7 @@ const validateMenu = (input, menu) => {
   }, true);
 
   if (onlyDrink) {
-    throw new Error(ERROR_MESSAGE.VALIDATION_MENU);
+    throw new Error(ERROR_MESSAGE.ORDER_ONLY_DRINK);
   }
 };
 
